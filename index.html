@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hora de codar 4</title>
+</head>
+<body>
+
+    
+    <script>
+        ///ola prof linnguiça
+
+        
+        //1 -Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles. 
+
+        console.log('cadastre quantos você quiser caso queira parar escreve PARE')
+ 
+        cadastro = []
+        
+        for(i = 1; i = 1; ){
+            estudantes = prompt('digite o nome do estudante: ')
+            cadastro.push(estudantes)
+            if(estudantes == 'PARE'){
+                cadastro.pop(estudantes)
+                break
+            }
+        }
+        console.log(cadastro.length)
+        console.log(cadastro)
+
+
+            //2- Crie uma array de planetas que inclua "Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"  e, em seguida, peça ao usuário para digitar o nome de um planeta.  Verifique se o planeta que o usuário informou está na array e informe ao usuário.
+        var planetas = ["terra", "marte", "plutao", "venus", "jupiter", "saturno"];
+var planetaUsuario = prompt("Digite o nome de um planeta: ").toLowerCase();
+var i = true;
+
+while (i) {
+    if (planetas.includes(planetaUsuario)) {
+        console.log("Sim, o planeta", planetaUsuario, "está na lista de planetas.");
+    } else {
+        console.log("Não, o planeta", planetaUsuario, "não está na lista de planetas.");
+    }
+
+    var confirmar = prompt("Deseja tentar novamente? S para sim e N para não ").toLowerCase();
+
+    if (confirmar === 's') {
+        planetaUsuario = prompt("Digite o nome de um planeta: ");
+    } else if (confirmar === 'n') {
+        i = false;
+        console.log('Programa encerrado.');
+    }
+}
+
+//3 Vamos criar uma lista de compras.  Crie uma array de frutas, exiba-a ao usuário e, em seguida, peça ao usuário para digitar o nome de uma das frutas. Caso a fruta esteja no array, remova-a e exiba a mensagem "Fruta foi retirada da lista".  Peça novamente para o usuário digitar o nome de uma fruta para ser removida.  Sempre que o usuário procurar por uma fruta que não está no array exiba a mensagem "Fruta indisponível no nosso mercado".  Quando o array não possuir mais itens dentro de si, escreva "Lista de compras finalizada".
+
+frutas = ['banana', 'maça', 'laranja', 'framboesa'];
+console.log('lista de compras: \n' + frutas);
+ 
+fruta = prompt('Digite o nome de uma das frutas para retirar: ').toLowerCase();
+
+while(!frutas.includes(fruta)) {
+    console.log('Erro: Esta fruta não está na lista.');
+    fruta = prompt('Digite o nome de uma das frutas para retirar: ').toLowerCase();
+}
+try {
+  
+    var indice = frutas.indexOf(fruta); // Encontra o índice da fruta na array
+    if (indice !== -1) { // Verifica se a fruta está na array
+        frutas.splice(indice, 1); // Remove a fruta da array
+        console.log("Fruta removida:", fruta);
+        console.log('Contém ainda essas frutas: ' + frutas);
+        
+        var novaFruta = prompt('Deseja retirar outra fruta? Digite "Sim" para continuar: ').toLowerCase();
+        
+        while (novaFruta == 'sim') {
+            fruta = prompt('Digite o nome de outra fruta para retirar: ').toLowerCase();
+
+            var novoIndice = frutas.indexOf(fruta); // Encontra o índice da nova fruta na array
+
+            if (novoIndice !== -1) { // Verifica se a nova fruta está na array
+                frutas.splice(novoIndice, 1); // Remove a nova fruta da array
+                console.log("Fruta removida:", fruta);
+                console.log('Contém ainda essas frutas: ' + frutas);
+                     if (frutas.length == 0) {
+            console.log('Acabou as frutas, FIM');
+        }
+            } else {
+                console.log("A fruta não está na lista.");
+            }
+            novaFruta = prompt('Deseja retirar outra fruta? Digite "Sim" para continuar: ').toLowerCase();
+        }  if (novaFruta != 'sim'){
+            console.log('Programa encerrado')
+        }
+    } else {
+        console.log("A fruta não está na lista.");
+    }
+} catch (error) {
+    console.log('Ocorreu um erro:', error.message);
+}
+
+
+    </script>
+</body>
+</html>
